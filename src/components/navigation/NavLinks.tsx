@@ -1,19 +1,22 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 
 interface NavLinksProps {
   mobile?: boolean;
+  setMenuOpen?: (open: boolean) => void;
 }
 
-const NavLinks = ({ mobile = false }: NavLinksProps) => {
+const NavLinks = ({ mobile = false, setMenuOpen }: NavLinksProps) => {
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+
   const links = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
     { href: '/employees', label: 'Employees/Members' },
     { href: '/forms', label: 'Forms' },
-    { href: '/projects', label: 'Projects/Budgets' },
+    { href: '/projects', label: 'Project/Budgets' },
     { href: '/notices', label: 'Notice' },
     { href: '/contacts', label: 'Contacts' },
   ];
@@ -24,47 +27,65 @@ const NavLinks = ({ mobile = false }: NavLinksProps) => {
     { href: '/news', label: 'News and Updates' },
   ];
 
+  const handleClick = () => {
+    if (mobile && setMenuOpen) {
+      setMenuOpen(false);
+    }
+  };
+
+  const navLinkStyles = mobile
+    ? "text-white px-6 py-4 hover:bg-[#008f66] block w-full text-left"
+    : "text-white px-4 py-2 hover:text-gray-200 transition-colors whitespace-nowrap h-full flex items-center";
+
   return (
-    <>
+    <div className={`${mobile ? 'flex flex-col w-full' : 'flex items-center h-full'}`}>
       {links.map((link) => (
         <Link
           key={link.href}
           href={link.href}
-          className={`${
-            mobile
-              ? 'block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100'
-              : 'px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100'
-          }`}
+          className={navLinkStyles}
+          onClick={handleClick}
         >
           {link.label}
         </Link>
       ))}
       
-      <div className={`${mobile ? 'relative' : 'relative group'}`}>
-        <button className="px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 w-full text-left">
+      <div className={`${mobile ? 'w-full' : 'relative group h-full'}`}>
+        <button 
+          className={mobile 
+            ? "text-white px-6 py-4 hover:bg-[#008f66] block w-full text-left"
+            : "text-white px-4 py-2 hover:text-gray-200 transition-colors h-full flex items-center"
+          }
+          onClick={() => mobile && setActiveDropdown(activeDropdown === 'more' ? null : 'more')}
+        >
           More
         </button>
-        <div className={`${
-          mobile
-            ? 'pl-4 space-y-2'
-            : 'absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden group-hover:block'
-        }`}>
+        <div className={`
+          ${mobile 
+            ? 'bg-[#006544] w-full'
+            : 'absolute right-0 bg-[#007554] min-w-[200px] shadow-lg z-30'
+          } 
+          ${mobile 
+            ? activeDropdown === 'more' ? 'block' : 'hidden'
+            : 'hidden group-hover:block'
+          }
+        `}>
           {dropdownLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`${
-                mobile
-                  ? 'block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100'
-                  : 'block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100'
-              }`}
+              className={mobile
+                ? "text-white px-10 py-4 hover:bg-[#008f66] block w-full"
+                : "text-white px-4 py-2 hover:bg-[#008f66] block whitespace-nowrap"
+              }
+              onClick={handleClick}
             >
               {link.label}
             </Link>
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

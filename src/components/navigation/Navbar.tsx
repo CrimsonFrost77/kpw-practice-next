@@ -14,77 +14,65 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white shadow-lg">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo and Title */}
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center gap-2">
-              <Image
-                src="/KPLogo_white.png"
-                alt="Kaliakair-pourashava-logo"
-                width={48}
-                height={48}
-                className="w-12 h-12"
-              />
-              <h1 className="text-xl font-semibold hidden md:block">
-                {currentLang === 'en' ? 'Kaliakair Municipality' : 'কালিয়াকৈর পৌরসভা'}
-              </h1>
-            </Link>
-          </div>
+    <>
+      <nav className="fixed left-0 right-0 top-0 bg-[#007554] z-50 h-[125px] shadow-lg">
+        <div className="max-w-[1200px] mx-auto h-full">
+          <div className="flex items-center h-full relative px-4">
+            {/* Logo and Title Section */}
+            <div className="flex items-center">
+              <Link href="/" className="flex items-center gap-6">
+                <div className="relative w-[80px] h-[80px]">
+                  <Image
+                    src="/git_logo_transparent.webp"
+                    alt="Kaliakair-pourashava-logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <h1 className="text-white text-2xl font-semibold hidden md:block">
+                  Kaliakair Municipality
+                </h1>
+              </Link>
+            </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-4">
-            <NavLinks />
-            <button
-              onClick={toggleLanguage}
-              className="px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100"
-            >
-              {currentLang === 'en' ? 'বাংলা' : 'English'}
-            </button>
-          </div>
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex ml-auto">
+              <NavLinks />
+            </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
+            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-md text-gray-700 hover:bg-gray-100"
+              className="ml-auto text-white text-3xl md:hidden"
             >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {isMenuOpen ? (
-                  <path d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
+              ☰
             </button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden py-2">
-            <div className="flex flex-col space-y-2">
-              <NavLinks mobile />
-              <button
-                onClick={toggleLanguage}
-                className="px-3 py-2 text-left rounded-md text-gray-700 hover:bg-gray-100"
-              >
-                {currentLang === 'en' ? 'বাংলা' : 'English'}
-              </button>
-            </div>
+        {/* Language Switcher */}
+        <div className="absolute top-[125px] right-4 bg-[#007554] text-white py-1 px-4 rounded-b-md z-20">
+          <div className="flex items-center gap-2">
+            <Link href="#" className={`hover:opacity-80 ${currentLang === 'bn' ? 'font-bold' : ''}`}>
+              বাংলা
+            </Link>
+            <span>|</span>
+            <Link href="#" className={`hover:opacity-80 ${currentLang === 'en' ? 'font-bold underline' : ''}`}>
+              English
+            </Link>
           </div>
-        )}
-      </div>
-    </nav>
+        </div>
+      </nav>
+
+      {/* Mobile Menu Overlay */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 bg-[#007554] z-40 md:hidden pt-[125px]">
+          <div className="flex flex-col">
+            <NavLinks mobile={true} setMenuOpen={setIsMenuOpen} />
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
