@@ -17,7 +17,7 @@ const Navbar = () => {
     <>
       {/* Main Navbar */}
       <nav className="fixed left-0 right-0 top-0 bg-[#007554] shadow-lg z-50">
-        <div className="max-w-[1200px] mx-auto">
+        <div className=" mx-auto">
           <div className="flex justify-between items-center h-[125px] px-4">
             {/* Logo Section */}
             <Link href="/" className="flex items-center gap-6">
@@ -35,14 +35,14 @@ const Navbar = () => {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex">
+            <div className="hidden [@media(min-width:925px)]:flex [&>div]:text-base xl:text-base">
               <NavLinks />
             </div>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-white text-3xl md:hidden"
+              className="text-white text-3xl [@media(min-width:925px)]:hidden"
             >
               ☰
             </button>
@@ -54,14 +54,14 @@ const Navbar = () => {
           <div className="flex items-center gap-2">
             <button 
               onClick={toggleLanguage} 
-              className={`hover:opacity-80 ${currentLang === 'bn' ? 'font-bold' : ''}`}
+              className={`hover:opacity-90 ${currentLang === 'bn' ? 'font-bold underline' : ''}`}
             >
               বাংলা
             </button>
             <span>|</span>
             <button 
               onClick={toggleLanguage} 
-              className={`hover:opacity-80 ${currentLang === 'en' ? 'font-bold underline' : ''}`}
+              className={`hover:opacity-90 ${currentLang === 'en' ? 'font-bold underline' : ''}`}
             >
               English
             </button>
@@ -70,7 +70,7 @@ const Navbar = () => {
       </nav>
 
       {/* Mobile Menu Wrapper */}
-      <div className="fixed top-[125px] left-0 right-0 overflow-hidden md:hidden z-40">
+      <div className="fixed top-[125px] left-0 right-0 overflow-hidden [@media(min-width:925px)]:hidden z-40">
         <div 
           className={`
             bg-[#007554] w-full transform

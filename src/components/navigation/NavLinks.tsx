@@ -40,11 +40,10 @@ const NavLinks = ({ mobile = false, setMenuOpen }: NavLinksProps) => {
           key={link.href}
           href={link.href}
           className={`
-            text-white whitespace-nowrap
+            text-white whitespace-nowrap text-sm xl:text-base
             ${mobile 
               ? 'px-6 py-4 hover:bg-[#008f66] block w-full'
-              : 'px-4 py-2 hover:text-gray-200 h-full flex items-center'
-            }
+              : 'px-3 xl:px-4 py-2 hover:bg-[#008f66] h-full flex items-center'}
           `}
           onClick={handleClick}
         >
@@ -55,10 +54,10 @@ const NavLinks = ({ mobile = false, setMenuOpen }: NavLinksProps) => {
       <div className={mobile ? 'w-full' : 'relative group'}>
         <button 
           className={`
-            text-white w-full text-left
+            text-white w-full text-left text-sm xl:text-base
             ${mobile 
               ? 'px-6 py-4 hover:bg-[#008f66]'
-              : 'px-4 py-2 hover:text-gray-200 h-full'
+              : 'px-3 xl:px-4 py-2 hover:bg-[#008f66] h-full'
             }
           `}
           onClick={() => mobile && setActiveDropdown(activeDropdown === 'more' ? null : 'more')}
@@ -80,7 +79,7 @@ const NavLinks = ({ mobile = false, setMenuOpen }: NavLinksProps) => {
               key={link.href}
               href={link.href}
               className={`
-                text-white block
+                text-white block text-sm xl:text-base
                 ${mobile
                   ? 'px-10 py-4 hover:bg-[#008f66]'
                   : 'px-4 py-2 hover:bg-[#008f66]'
