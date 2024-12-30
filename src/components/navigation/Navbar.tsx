@@ -18,21 +18,23 @@ const Navbar = () => {
       {/* Main Navbar */}
       <nav className="fixed left-0 right-0 top-0 bg-[#007554] shadow-lg z-50">
         <div className=" mx-auto">
-          <div className="flex justify-between items-center h-[125px] px-4">
+          <div className="flex justify-between items-center h-[125px] px-4 [@media(min-width:1200px)]:pl-24">
             {/* Logo Section */}
-            <Link href="/" className="flex items-center gap-6">
-              <div className="relative w-[80px] h-[80px]">
-                <Image
-                  src="/git_logo_transparent.webp"
-                  alt="Kaliakair-pourashava-logo"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <h1 className="text-white text-2xl font-semibold block">
-                Kaliakair Municipality
-              </h1>
-            </Link>
+            <div className="flex items-center gap-6 [@media(max-width:925px)]:absolute [@media(max-width:925px)]:left-1/2 [@media(max-width:925px)]:-translate-x-1/2">
+              <Link href="/" className="flex items-center gap-6">
+                <div className="relative w-[80px] h-[80px] min-w-[80px]">
+                  <Image
+                    src="/git_logo_transparent.webp"
+                    alt="Kaliakair-pourashava-logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <h1 className="text-white text-2xl [@media(max-width:925px)]:text-3xl font-semibold block">
+                  Kaliakair Municipality
+                </h1>
+              </Link>
+            </div>
 
             {/* Desktop Navigation */}
             <div className="hidden [@media(min-width:925px)]:flex [&>div]:text-base xl:text-base">
