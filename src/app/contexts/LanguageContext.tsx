@@ -1,0 +1,94 @@
+'use client';
+
+import React, { createContext, useContext, useState, useEffect } from 'react';
+
+type Language = 'en' | 'bn';
+
+interface LanguageContextType {
+  language: Language;
+  setLanguage: (lang: Language) => void;
+  translations: Record<string, Record<Language, string>>;
+}
+
+const translations = {
+  'navbar.home': {
+    en: 'Home',
+    bn: 'হোম'
+  },
+  'navbar.about': {
+    en: 'About',
+    bn: 'সম্পর্কে'
+  },
+  'navbar.employees': {
+    en: 'Employees/Members',
+    bn: 'কর্মচারী/সদস্য'
+  },
+  'navbar.forms': {
+    en: 'Forms',
+    bn: 'ফরম'
+  },
+  'navbar.projects': {
+    en: 'Project/Budgets',
+    bn: 'প্রকল্প/বাজেট'
+  },
+  'navbar.notices': {
+    en: 'Notice',
+    bn: 'নোটিশ'
+  },
+  'navbar.contacts': {
+    en: 'Contacts',
+    bn: 'যোগাযোগ'
+  },
+  'navbar.more': {
+    en: 'More',
+    bn: 'আরও'
+  },
+  'navbar.tenders': {
+    en: 'Tenders',
+    bn: 'দরপত্র'
+  },
+  'navbar.gallery': {
+    en: 'Photo Gallery',
+    bn: 'ফটো গ্যালারি'
+  },
+  'navbar.news': {
+    en: 'News and Updates',
+    bn: 'খবর এবং আপডেট'
+  },
+  'site.title': {
+    en: 'Kaliakair Municipality',
+    bn: 'কালিয়াকৈর পৌরসভা'
+  }
+};
+
+const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+
+export function LanguageProvider({ children }: { children: React.ReactNode }) {
+  const [language, setLanguage] = useState<Language>('en');
+
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem('language') as Language;
+    if (savedLanguage) {
+      setLanguage(savedLanguage);
+    }
+  }, []);
+
+  const handleSetLanguage = (lang: Language) => {
+    setLanguage(lang);
+    localStorage.setItem('language', lang);
+  };
+
+  return (
+    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, translations }}>
+      {children}
+    </LanguageContext.Provider>
+  );
+}
+
+export function useLanguage() {
+  const context = useContext(LanguageContext);
+  if (context === undefined) {
+    throw new Error('useLanguage must be used within a LanguageProvider');
+  }
+  return context;
+}

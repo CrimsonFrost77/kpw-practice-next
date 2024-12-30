@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useLanguage } from '@/app/contexts/LanguageContext';
 
 interface NavLinksProps {
   mobile?: boolean;
@@ -10,21 +11,22 @@ interface NavLinksProps {
 
 const NavLinks = ({ mobile = false, setMenuOpen }: NavLinksProps) => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const { language, translations } = useLanguage();
 
   const links = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/employees', label: 'Employees/Members' },
-    { href: '/forms', label: 'Forms' },
-    { href: '/projects', label: 'Project/Budgets' },
-    { href: '/notices', label: 'Notice' },
-    { href: '/contacts', label: 'Contacts' },
+    { href: '/', key: 'navbar.home' },
+    { href: '/about', key: 'navbar.about' },
+    { href: '/employees', key: 'navbar.employees' },
+    { href: '/forms', key: 'navbar.forms' },
+    { href: '/projects', key: 'navbar.projects' },
+    { href: '/notices', key: 'navbar.notices' },
+    { href: '/contacts', key: 'navbar.contacts' },
   ];
 
   const dropdownLinks = [
-    { href: '/tenders', label: 'Tenders' },
-    { href: '/gallery', label: 'Photo Gallery' },
-    { href: '/news', label: 'News and Updates' },
+    { href: '/tenders', key: 'navbar.tenders' },
+    { href: '/gallery', key: 'navbar.gallery' },
+    { href: '/news', key: 'navbar.news' },
   ];
 
   const handleClick = () => {
@@ -47,7 +49,7 @@ const NavLinks = ({ mobile = false, setMenuOpen }: NavLinksProps) => {
           `}
           onClick={handleClick}
         >
-          {link.label}
+          {translations[link.key][language]}
         </Link>
       ))}
       
@@ -62,7 +64,7 @@ const NavLinks = ({ mobile = false, setMenuOpen }: NavLinksProps) => {
           `}
           onClick={() => mobile && setActiveDropdown(activeDropdown === 'more' ? null : 'more')}
         >
-          More
+          {translations['navbar.more'][language]}
         </button>
         <div className={`
           ${mobile 
@@ -87,7 +89,7 @@ const NavLinks = ({ mobile = false, setMenuOpen }: NavLinksProps) => {
               `}
               onClick={handleClick}
             >
-              {link.label}
+              {translations[link.key][language]}
             </Link>
           ))}
         </div>

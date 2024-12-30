@@ -4,14 +4,11 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import NavLinks from './NavLinks';
+import { useLanguage } from '@/app/contexts/LanguageContext';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [currentLang, setCurrentLang] = useState<'en' | 'bn'>('en');
-
-  const toggleLanguage = () => {
-    setCurrentLang(prev => prev === 'en' ? 'bn' : 'en');
-  };
+  const { language, setLanguage, translations } = useLanguage();
 
   return (
     <>
@@ -31,7 +28,7 @@ const Navbar = () => {
                   />
                 </div>
                 <h1 className="text-white text-2xl [@media(max-width:925px)]:text-3xl font-semibold block transition-all duration-500 ease-in-out">
-                  Kaliakair Municipality
+                  {translations['site.title'][language]}
                 </h1>
               </Link>
             </div>
@@ -51,19 +48,19 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Language Switcher - Moved inside nav */}
+        {/* Language Switcher */}
         <div className="absolute top-[125px] right-4 bg-[#007554] text-white py-1 px-4 rounded-b-md z-30">
           <div className="flex items-center gap-2">
             <button 
-              onClick={toggleLanguage} 
-              className={`hover:opacity-90 ${currentLang === 'bn' ? 'font-bold underline' : ''}`}
+              onClick={() => setLanguage('bn')} 
+              className={`hover:opacity-90 ${language === 'bn' ? 'font-bold underline' : ''}`}
             >
               বাংলা
             </button>
             <span>|</span>
             <button 
-              onClick={toggleLanguage} 
-              className={`hover:opacity-90 ${currentLang === 'en' ? 'font-bold underline' : ''}`}
+              onClick={() => setLanguage('en')} 
+              className={`hover:opacity-90 ${language === 'en' ? 'font-bold underline' : ''}`}
             >
               English
             </button>
