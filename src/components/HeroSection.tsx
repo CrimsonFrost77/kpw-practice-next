@@ -11,7 +11,7 @@ const HeroSection = () => {
   // Array of image objects with src and alt text
   const images = [
     {
-      src: '/asthetic-photos/HighTEch.webp.webp',
+      src: '/asthetic-photos/HighTEch.webp',
       alt: 'Bangabandhu Hi-Tech Park'
     },
     {
