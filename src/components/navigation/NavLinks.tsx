@@ -33,29 +33,34 @@ const NavLinks = ({ mobile = false, setMenuOpen }: NavLinksProps) => {
     }
   };
 
-  const navLinkStyles = mobile
-    ? "text-white px-6 py-4 hover:bg-[#008f66] block w-full text-left"
-    : "text-white px-4 py-2 hover:text-gray-200 transition-colors whitespace-nowrap h-full flex items-center";
-
   return (
-    <div className={`${mobile ? 'flex flex-col w-full' : 'flex items-center h-full'}`}>
+    <div className={`${mobile ? 'flex flex-col' : 'flex'}`}>
       {links.map((link) => (
         <Link
           key={link.href}
           href={link.href}
-          className={navLinkStyles}
+          className={`
+            text-white whitespace-nowrap
+            ${mobile 
+              ? 'px-6 py-4 hover:bg-[#008f66] block w-full'
+              : 'px-4 py-2 hover:text-gray-200 h-full flex items-center'
+            }
+          `}
           onClick={handleClick}
         >
           {link.label}
         </Link>
       ))}
       
-      <div className={`${mobile ? 'w-full' : 'relative group h-full'}`}>
+      <div className={mobile ? 'w-full' : 'relative group'}>
         <button 
-          className={mobile 
-            ? "text-white px-6 py-4 hover:bg-[#008f66] block w-full text-left"
-            : "text-white px-4 py-2 hover:text-gray-200 transition-colors h-full flex items-center"
-          }
+          className={`
+            text-white w-full text-left
+            ${mobile 
+              ? 'px-6 py-4 hover:bg-[#008f66]'
+              : 'px-4 py-2 hover:text-gray-200 h-full'
+            }
+          `}
           onClick={() => mobile && setActiveDropdown(activeDropdown === 'more' ? null : 'more')}
         >
           More
@@ -63,21 +68,24 @@ const NavLinks = ({ mobile = false, setMenuOpen }: NavLinksProps) => {
         <div className={`
           ${mobile 
             ? 'bg-[#006544] w-full'
-            : 'absolute right-0 bg-[#007554] min-w-[200px] shadow-lg z-30'
+            : 'absolute right-0 bg-[#007554] min-w-[200px] shadow-lg'
           } 
           ${mobile 
             ? activeDropdown === 'more' ? 'block' : 'hidden'
-            : 'hidden group-hover:block'
+            : 'hidden group-hover:block z-40'
           }
         `}>
           {dropdownLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={mobile
-                ? "text-white px-10 py-4 hover:bg-[#008f66] block w-full"
-                : "text-white px-4 py-2 hover:bg-[#008f66] block whitespace-nowrap"
-              }
+              className={`
+                text-white block
+                ${mobile
+                  ? 'px-10 py-4 hover:bg-[#008f66]'
+                  : 'px-4 py-2 hover:bg-[#008f66]'
+                }
+              `}
               onClick={handleClick}
             >
               {link.label}
