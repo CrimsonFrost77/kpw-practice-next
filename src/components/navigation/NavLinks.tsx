@@ -40,7 +40,7 @@ const NavLinks = ({ mobile = false, setMenuOpen }: NavLinksProps) => {
           key={link.href}
           href={link.href}
           className={`
-            text-white whitespace-nowrap text-sm xl:text-base
+            text-white whitespace-nowrap text-sm xl:text-base transition-all duration-300 ease-in-out
             ${mobile 
               ? 'px-6 py-4 hover:bg-[#008f66] block w-full'
               : 'px-3 xl:px-4 py-2 hover:bg-[#008f66] h-full flex items-center'}
@@ -54,7 +54,7 @@ const NavLinks = ({ mobile = false, setMenuOpen }: NavLinksProps) => {
       <div className={mobile ? 'w-full' : 'relative group'}>
         <button 
           className={`
-            text-white w-full text-left text-sm xl:text-base
+            text-white w-full text-left text-sm xl:text-base transition-all duration-300 ease-in-out
             ${mobile 
               ? 'px-6 py-4 hover:bg-[#008f66]'
               : 'px-3 xl:px-4 py-2 hover:bg-[#008f66] h-full'
@@ -79,7 +79,7 @@ const NavLinks = ({ mobile = false, setMenuOpen }: NavLinksProps) => {
               key={link.href}
               href={link.href}
               className={`
-                text-white block text-sm xl:text-base
+                text-white block text-sm xl:text-base transition-all duration-300 ease-in-out
                 ${mobile
                   ? 'px-10 py-4 hover:bg-[#008f66]'
                   : 'px-4 py-2 hover:bg-[#008f66]'
