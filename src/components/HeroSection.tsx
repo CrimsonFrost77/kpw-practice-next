@@ -23,12 +23,8 @@ const HeroSection = () => {
       alt: 'Kaliakoir Rail'
     },
     {
-      src: '/asthetic-photos/Mokhosh_swamp.webp',
-      alt: 'Mokhosh swamp'
-    },
-    {
       src: '/asthetic-photos/Mokhosh_swamp2.webp',
-      alt: 'Mokhosh swamp again'
+      alt: 'Mokhosh swamp'
     },
     {
       src: '/asthetic-photos/ShreefaltaliCourtOfEstate.webp',

@@ -28,7 +28,7 @@ const FindInformation = () => {
 
   return (
     <div className="my-8">
-      <h1 className="text-3xl font-bold text-center mb-8 text-white bg-[#007554] ">Find Information</h1>
+      <h1 className="text-3xl font-bold text-center mb-8 text-white bg-[#007554] rounded-lg ">Find Information</h1>
       <div className="grid md:grid-cols-2 gap-8">
         <NewsUpdatesCard articles={sampleArticles} />
         <EventsCard events={sampleEvents} />
