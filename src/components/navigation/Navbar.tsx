@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <>
       {/* Main Navbar */}
-      <nav className="fixed left-0 right-0 top-0 bg-[#007554]/80 hover:bg-[#257a5f] shadow-lg z-50 transition-all duration-500 ease-in-out">
+      <nav className="fixed left-0 right-0 top-0 bg-[#00834ccc] hover:bg-[#2c9c6e] shadow-lg z-50 transition-all duration-500 ease-in-out">
         <div className=" mx-auto">
           <div className="flex justify-between items-center h-[125px] px-4 [@media(min-width:1200px)]:pl-24">
             {/* Logo Section */}

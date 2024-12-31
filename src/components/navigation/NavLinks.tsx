@@ -44,8 +44,8 @@ const NavLinks = ({ mobile = false, setMenuOpen }: NavLinksProps) => {
           className={`
             text-white whitespace-nowrap text-sm xl:text-base transition-all duration-300 ease-in-out
             ${mobile 
-              ? 'px-6 py-4 hover:bg-[#008f66] block w-full'
-              : 'px-3 xl:px-4 py-2 hover:bg-[#008f66] h-full flex items-center'}
+              ? 'px-6 py-4 hover:bg-[#49c581] block w-full'
+              : 'px-3 xl:px-4 py-2 hover:bg-[#49c581] h-full flex items-center'}
           `}
           onClick={handleClick}
         >
@@ -58,8 +58,8 @@ const NavLinks = ({ mobile = false, setMenuOpen }: NavLinksProps) => {
           className={`
             text-white w-full text-left text-sm xl:text-base transition-all duration-300 ease-in-out
             ${mobile 
-              ? 'px-6 py-4 hover:bg-[#008f66]'
-              : 'px-3 xl:px-4 py-2 hover:bg-[#008f66] h-full'
+              ? 'px-6 py-4 hover:bg-[#49c581]'
+              : 'px-3 xl:px-4 py-2 hover:bg-[#49c581] h-full'
             }
           `}
           onClick={() => mobile && setActiveDropdown(activeDropdown === 'more' ? null : 'more')}
@@ -83,8 +83,8 @@ const NavLinks = ({ mobile = false, setMenuOpen }: NavLinksProps) => {
               className={`
                 text-white block text-sm xl:text-base transition-all duration-300 ease-in-out
                 ${mobile
-                  ? 'px-10 py-4 hover:bg-[#008f66]'
-                  : 'px-4 py-2 hover:bg-[#008f66]'
+                  ? 'px-10 py-4 hover:bg-[#49c581]'
+                  : 'px-4 py-2 hover:bg-[#49c581]'
                 }
               `}
               onClick={handleClick}
