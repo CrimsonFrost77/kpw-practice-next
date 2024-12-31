@@ -61,11 +61,14 @@ const translations = {
   }
 };
 
+//creating a context for language
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+//creating a provider for language
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>('en');
 
+  //setting the language from local storage
   useEffect(() => {
     const savedLanguage = localStorage.getItem('language') as Language;
     if (savedLanguage) {
@@ -73,11 +76,13 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
+  //setting the language to local storage
   const handleSetLanguage = (lang: Language) => {
     setLanguage(lang);
     localStorage.setItem('language', lang);
   };
 
+  //returning the context provider
   return (
     <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, translations }}>
       {children}
@@ -85,6 +90,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
+//creating a hook for language
 export function useLanguage() {
   const context = useContext(LanguageContext);
   if (context === undefined) {

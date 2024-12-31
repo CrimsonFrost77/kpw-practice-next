@@ -21,6 +21,7 @@ const NewsUpdatesCard = ({ articles }: NewsUpdatesCardProps) => {
             key={index}
             href={article.url}
             className="block text-gray-600 hover:text-[#007554] transition-colors duration-200"
+            target='_blank'
           >
             {article.headline}
           </Link>
