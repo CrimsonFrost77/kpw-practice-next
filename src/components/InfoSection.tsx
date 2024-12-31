@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useLanguage } from '@/app/contexts/LanguageContext';
 
 const InfoSection = () => {
-  const { language } = useLanguage();
+  const { language, translations } = useLanguage();
 
   return (
     <div className="w-full">
@@ -13,7 +13,7 @@ const InfoSection = () => {
         {/* Title for mobile - shows first on mobile, hidden on desktop */}
         <div className="w-full text-center lg:hidden">
           <h1 className="text-[#0066cc] text-4xl font-bold mb-5 pb-2.5 border-b-3 border-[#0066cc] inline-block">
-            Welcome to Kaliakair Municipality
+          {translations['home-info.title'][language]}
           </h1>
         </div>
 
@@ -43,15 +43,12 @@ const InfoSection = () => {
         <div className="flex-1 p-5 lg:p-5 w-full">
           {/* Title for desktop - hidden on mobile, shows in original position on desktop */}
           <h1 className="hidden lg:block text-[#0066cc] text-4xl font-bold mb-5 pb-2.5 border-b-3 border-[#0066cc]">
-            Welcome to Kaliakair Municipality
+          {translations['home-info.title'][language]}
           </h1>
 
           <div className="space-y-4">
             <p className="bg-[#f0f8ff] p-4 border-l-4 border-red-500 rounded text-gray-800 leading-relaxed">
-              Established in 2003 (with its foundations set in 2001), Kaliakoir Municipality is
-              designated as a Class A municipality, consisting of a total of 9 wards. Covering an area
-              of 28.02 sq. km, it supports a population of approximately 700,000 people and includes
-              19,150 holdings.
+            {translations['home-info.p1'][language]}
             </p>
 
             <p className="bg-[#f0f8ff] p-4 border-l-4 border-[#1e90ff] rounded text-gray-800 leading-relaxed">
