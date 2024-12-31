@@ -15,8 +15,7 @@ const StatsItem: React.FC<StatsItemProps> = ({ label, value }) => (
 
 const MunicipalityDashboard = () => {
   return (
-    <div className="bg-white shadow-lg">
-
+    <div>
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 py-8">
         {/* Stats Dashboard */}
