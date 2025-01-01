@@ -1,22 +1,22 @@
+// TextWithImgSlider.tsx
 "use client";
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-
-
+import { useLanguage } from '@/app/contexts/LanguageContext';
 
 interface TextWithImgSliderProps {
+  titleKey: string; // Changed from title to titleKey
   images: {
     src: string;
     alt: string;
   }[];
-  title: string;
   content: React.ReactNode;
-
 }
 
-const TextWithImgSlider = ({ images, title, content }: TextWithImgSliderProps) => {
+const TextWithImgSlider = ({ titleKey, images, content }: TextWithImgSliderProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const { language, translations } = useLanguage();
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % images.length);
@@ -26,12 +26,11 @@ const TextWithImgSlider = ({ images, title, content }: TextWithImgSliderProps) =
     setCurrentSlide((prev) => (prev - 1 + images.length) % images.length);
   };
 
-  
-
-
   return (
     <div className="max-w-4xl mx-auto p-5 bg-white rounded-lg shadow-md">
-      <h2 className="text-[#0d3d35] text-2xl font-bold mb-6">{title}</h2>
+      <h2 className="text-[#0d3d35] text-2xl font-bold mb-6">
+        {translations[titleKey][language]}
+      </h2>
       
       <div className="flex flex-col lg:flex-row gap-6">
         {/* Text Content */}
