@@ -3,8 +3,10 @@
 
 import MunicipalityDashboard from '@/components/MunicipalityDashboard';
 import TextWithImgSlider from '@/components/TextWithImgSlider';
-
+import { useLanguage } from '@/app/contexts/LanguageContext';
+import React from 'react';
 export default function About() {
+  
   const images = [
     {
       src: "/maps/Map_1_1.jpg",
@@ -19,14 +21,16 @@ export default function About() {
       alt: "Kaliakair Municipality Jurisdiction Map"
     }
   ];
-
+ const { language, translations } = useLanguage();
   return (
     <div className="space-y-8">
       <MunicipalityDashboard />
       
       <TextWithImgSlider
         title="About Kaliakair Municipality"
+        
         images={images}
+       
         content={
           <>
             <p className="text-gray-800 leading-relaxed mb-4">

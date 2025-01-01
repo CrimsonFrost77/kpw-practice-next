@@ -14,6 +14,8 @@ const StatsItem: React.FC<StatsItemProps> = ({ label, value }) => (
 );
 
 const MunicipalityDashboard = () => {
+
+
   return (
     <div>
       {/* Main Content */}

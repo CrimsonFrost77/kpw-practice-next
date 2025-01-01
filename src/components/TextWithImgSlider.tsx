@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
+
+
 interface TextWithImgSliderProps {
   images: {
     src: string;
@@ -10,6 +12,7 @@ interface TextWithImgSliderProps {
   }[];
   title: string;
   content: React.ReactNode;
+
 }
 
 const TextWithImgSlider = ({ images, title, content }: TextWithImgSliderProps) => {
@@ -22,6 +25,9 @@ const TextWithImgSlider = ({ images, title, content }: TextWithImgSliderProps) =
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + images.length) % images.length);
   };
+
+  
+
 
   return (
     <div className="max-w-4xl mx-auto p-5 bg-white rounded-lg shadow-md">
