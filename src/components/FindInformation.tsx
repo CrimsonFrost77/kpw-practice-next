@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import NewsUpdatesCard from './cards/NewsUpdatesCard';
 import EventsCard from './cards/EventsCard';
