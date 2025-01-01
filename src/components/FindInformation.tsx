@@ -26,13 +26,21 @@ const FindInformation = () => {
     { name: "Helpline 6", image: "/helplines/109.png" }
   ];
 
+
+  const samplePhotos = [
+    { src: "/asthetic-photos/HighTEch.webp", alt: "Bangabandhu Hi-Tech Park" },
+    { src: "/asthetic-photos/Kaliakoir_Pic1.webp", alt: "Wow! Kaliakoir" },
+    { src: "/asthetic-photos/Kaliakoir_rail.webp", alt: "Kaliakoir Rail" },
+    { src: "/asthetic-photos/Mokhosh_swamp.webp", alt: "Mokhosh swamp" }
+  ];
+
   return (
     <div className="my-8">
       <h1 className="text-3xl font-bold text-center mb-8 text-white bg-[#007554] rounded-lg ">Find Information</h1>
       <div className="grid md:grid-cols-2 gap-8">
         <NewsUpdatesCard articles={sampleArticles} />
         <EventsCard events={sampleEvents} />
-        <PhotoGalleryCard featuredImage="/path/to/featured/image.jpg" />
+        <PhotoGalleryCard photos={samplePhotos} />
         <HelplinesCard helplines={sampleHelplines} />
       </div>
     </div>
