@@ -8,12 +8,32 @@ import { useLanguage } from '@/app/contexts/LanguageContext';
 const galleryData = [
   {
     id: 1,
-    thumbnailSrc: "/asthetic-photos/HighTEch.webp",
+    thumbnailSrc: "/GalleryItems/Awareness-seminar/awareness-seminar2.jpeg",
     images: [
       {
-        src: "/asthetic-photos/HighTEch.webp",
-        alt: "Bangabandhu Hi-Tech Park",
-        description: "The Bangabandhu Hi-Tech Park in Kaliakair is a state-of-the-art technology park that serves as a hub for IT and technology companies. The park features modern infrastructure and facilities to support the growing tech industry in Bangladesh."
+        src: "/GalleryItems/Awareness-seminar/awareness-seminar1.jpeg",
+        alt: "Awareness Seminar 2024",
+        description: `The 2024 awareness seminar. The seminar was held in the municipal building.`
+      },{
+        src: "/GalleryItems/Awareness-seminar/awareness-seminar2.jpeg",
+        alt: "Awareness Seminar 2024",
+        description: `The 2024 awareness seminar. The seminar was held in the municipal building.`
+      },{
+        src: "/GalleryItems/Awareness-seminar/awareness-seminar3.jpeg",
+        alt: "Awareness Seminar 2024",
+        description: `The 2024 awareness seminar. The seminar was held in the municipal building.`
+      },{
+        src: "/GalleryItems/Awareness-seminar/awareness-seminar4.jpeg",
+        alt: "Awareness Seminar 2024",
+        description: `The 2024 awareness seminar. The seminar was held in the municipal building.`
+      },{
+        src: "/GalleryItems/Awareness-seminar/awareness-seminar5.jpeg",
+        alt: "Awareness Seminar 2024",
+        description: `The 2024 awareness seminar. The seminar was held in the municipal building.`
+      },{
+        src: "/GalleryItems/Awareness-seminar/awareness-seminar6.jpeg",
+        alt: "Awareness Seminar 2024",
+        description: `The 2024 awareness seminar. The seminar was held in the municipal building.`
       },
       // Add more images for this group
     ]
