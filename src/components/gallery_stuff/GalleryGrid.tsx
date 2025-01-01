@@ -1,4 +1,5 @@
 // GalleryGrid.tsx
+"use client";
 import React, { useState } from 'react';
 import ImageThumbnail from './ImageThumbnail';
 import GalleryModal from './GalleryModal';
