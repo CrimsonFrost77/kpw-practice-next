@@ -1,4 +1,3 @@
-//code for the stat table in about page
 "use client";
 import React from 'react';
 
@@ -8,25 +7,21 @@ interface StatsItemProps {
 }
 
 const StatsItem: React.FC<StatsItemProps> = ({ label, value }) => (
-  <div className="bg-cyan-50 p-4 rounded-lg flex flex-col md:flex-row justify-between items-start md:items-center">
-    <span className="font-medium text-teal-700">{label}</span>
-    <span className="text-gray-800 mt-1 md:mt-0">{value}</span>
+  <div className="bg-cyan-50 p-3 rounded-lg flex flex-col md:flex-row justify-between items-start md:items-center">
+    <span className="font-medium text-teal-700 text-sm">{label}</span>
+    <span className="text-gray-800 mt-1 md:mt-0 text-sm">{value}</span>
   </div>
 );
 
 const MunicipalityDashboard = () => {
-
-
   return (
     <div>
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 py-8">
-        {/* Stats Dashboard */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-center text-white bg-teal-500 p-4 rounded-t-lg">
+      <main className="max-w-5xl mx-auto px-4 py-6">
+        <section className="mb-8">
+          <h2 className="text-2xl font-bold text-center text-white bg-teal-500 p-3 rounded-t-lg">
             Pourashava At a Glance
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white p-6 rounded-b-lg shadow">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 bg-white p-4 rounded-b-lg shadow">
             <StatsItem label="Established" value="2003 (2001)" />
             <StatsItem label="Class" value="A" />
             <StatsItem label="Total Wards" value="09" />
