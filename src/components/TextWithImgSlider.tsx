@@ -1,4 +1,5 @@
 // TextWithImgSlider.tsx
+// Code for a component that displays a title, text content, and an image slideshow with navigation buttons and slide indicators.
 "use client";
 import React, { useState } from 'react';
 import Image from 'next/image';

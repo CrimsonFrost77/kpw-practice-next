@@ -1,3 +1,4 @@
+//code for the stat table in about page
 "use client";
 import React from 'react';
 
