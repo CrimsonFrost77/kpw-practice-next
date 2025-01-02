@@ -3,7 +3,6 @@ import MunicipalityDashboard from '@/components/MunicipalityDashboard';
 import TextWithImgSlider from '@/components/TextWithImgSlider';
 import React from 'react';
 import AboutPageText from '@/components/AboutPageText';
-import ImageTextWrapper from '@/components/ImageTextWrapper';
 
 export default function About() {
   const images = [
