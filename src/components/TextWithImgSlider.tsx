@@ -1,13 +1,11 @@
-// TextWithImgSlider.tsx
-// Code for a component that displays a title, text content, and an image slideshow with navigation buttons and slide indicators.
-"use client";
+'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '@/app/contexts/LanguageContext';
 
 interface TextWithImgSliderProps {
-  titleKey: string; // Changed from title to titleKey
+  titleKey: string;
   images: {
     src: string;
     alt: string;
@@ -33,15 +31,11 @@ const TextWithImgSlider = ({ titleKey, images, content }: TextWithImgSliderProps
         {translations[titleKey][language]}
       </h2>
       
-      <div className="flex flex-col lg:flex-row gap-6">
-        {/* Text Content */}
-        <div className="lg:flex-1 prose max-w-none">
-          {content}
-        </div>
-
-        {/* Slideshow Container */}
-        <div className="lg:w-96 flex-none relative">
-          <div className="relative w-full h-96 rounded-lg overflow-hidden">
+      {/* Responsive container with float behavior */}
+      <div className="relative">
+        {/* Image Slider - Floated on larger screens */}
+        <div className="float-right ml-6 mb-4 w-full md:w-96">
+          <div className="relative w-full aspect-square rounded-lg overflow-hidden">
             <Image
               src={images[currentSlide].src}
               alt={images[currentSlide].alt}
@@ -81,6 +75,14 @@ const TextWithImgSlider = ({ titleKey, images, content }: TextWithImgSliderProps
             ))}
           </div>
         </div>
+
+        {/* Text Content - Wraps around the floated image */}
+        <div className="prose max-w-none text-justify">
+          {content}
+        </div>
+
+        {/* Clear float */}
+        <div className="clear-both" />
       </div>
     </div>
   );
