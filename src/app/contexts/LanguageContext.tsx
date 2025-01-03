@@ -71,8 +71,8 @@ const translations = {
     bn: `২০০৩ সালে প্রতিষ্ঠিত (২০০১ সালে ভিত্তি স্থাপন), কালিয়াকৈর পৌরসভা একটি এ শ্রেণির পৌরসভা হিসেবে নির্ধারিত, যা মোট ৯টি ওয়ার্ড নিয়ে গঠিত। ২৮.০২ বর্গ কিলোমিটার এলাকা জুড়ে বিস্তৃত এই পৌরসভায় প্রায় ৭,০০,০০০ জনসংখ্যা বসবাস করে এবং ১৯,১৫০টি হোল্ডিং রয়েছে।`
   },
   'about-info.title':{
-    en: 'About kaliakor municipality',
-    bn:' কালিয়াকোর পৌরসভা সম্পর্কে'
+    en:  'About kaliakor municipality',
+    bn:  'কালিয়াকোর পৌরসভা সম্পর্কে'
   },
   'about-info.p1':{
     en:'Kaliakair Municipality, established in 2003, stands as a testament to urban development in the Gazipur District. Our municipality has grown from its humble beginnings to become a vital center of commerce and community life.',
