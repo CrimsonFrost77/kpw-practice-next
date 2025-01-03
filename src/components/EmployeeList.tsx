@@ -182,7 +182,77 @@ const EmployeeList = () => {
         mobile: "01720363374",
         education: "Class 8",
         joiningDate: "-"
+      },
+      {
+        name: "Md. Abdul Mannan",
+          designation: "Office Assistant",
+        mobile: "01734000023",
+        education: "Class 8",
+        joinDate: "-",
+         
+        
+      },
+      {
+        name:  "Md. Solayman Hossen",
+        designation:"Office Assistant",
+        mobile: "01712851355",
+        education: "Class 8",
+        joinDate:"-",
+        
+        },
+    
+      {
+        name:"Abdullah Al Munsur",
+        designation:  "Office Assistant",
+        mobile:  "01776634486",
+        education: "Class 8",
+        joinDate:  "-",
+        
+        },
+      
+      {
+        name: "Khondokar Delowar Hossen",
+        designation:  "Office Assistant",
+       mobile: "01724088109",
+      education: "Class 8",
+        joinDate: "-",
+      
+        },
+    
+      {
+        name:  "Md. Forhad Hossen",
+       designation: "Night Guard",
+        mobile:"01818469351",
+        education: "Class 8",
+        joinDate: "-",
+        
+      },
+      {
+        name:  "Md. Mamun Hossen",
+        designation: "Night Guard",
+         mobile:  "01727267092",
+        education: "Class 8",
+        joinDate:  "-",
+        
+      },
+      {
+        name: "Shilpi Akter",
+        designation: "Office Assistant",
+        mobile: "01721523600",
+       education: "Class 8",
+        joinDate: "-",
+        
+      },
+      {
+        name: "Asia Begum",
+       designation: "Office Assistant",
+       mobile: "01742856623",
+         
+        education: "Class 8",
+        joinDate: "-",
+        
       }
+    
     ],
     taxAssessmentBranch: [
       {
@@ -197,6 +267,50 @@ const EmployeeList = () => {
         designation: "Assistant Tax Assessor",
         mobile: "01766632271",
         education: "B.A",
+        joiningDate: "-"
+      }
+    ],
+    taxCollectionBranch: [
+      {
+        name: "Md. Tofazzal Hossen",
+        designation: "Tax Collector",
+        mobile: "01815485793",
+        education: "B.Com (Honours)",
+        joiningDate: "-"
+      },
+      {
+        name: "Md. Abdus Sattar",
+        designation: "License Inspector",
+        mobile: "01818192512",
+        education: "B.A",
+        joiningDate: "-"
+      },
+      {
+        name: "Md. Saiful Islam",
+        designation: "Assistant Tax Collector",
+        mobile: "01819473068",
+        education: "M.A",
+        joiningDate: "-"
+      },
+      {
+        name: "Md. Shahidul Islam",
+        designation: "Assistant Tax Collector",
+        mobile: "01718434806",
+        education: "B.A",
+        joiningDate: "-"
+      },
+      {
+        name: "Md. Mosaraf Hossen",
+        designation: "Assistant Tax Collector",
+        mobile: "01719867582",
+        education: "B.S.S",
+        joiningDate: "-"
+      },
+      {
+        name: "Md. Robin Hossen",
+        designation: "Assistant License Inspector",
+        mobile: "01794799156",
+        education: "B.S.S",
         joiningDate: "-"
       }
     ],
@@ -216,7 +330,24 @@ const EmployeeList = () => {
         joiningDate: "-"
       }
     ],
-    civilBranch: [
+
+    marketCollectionBranch: [
+      {
+        name: "Md. Arif Hossen",
+        designation: "Market Inspector",
+        mobile: "01719603521",
+        education: "B.A",
+        joiningDate: "-"
+      },
+      {
+        name: "Md. Imrul Hasan Sumon",
+        designation: "Collector",
+        mobile: "01843590723",
+        education: "B.A",
+        joiningDate: "-"
+      }
+    ],
+    civilElectricalBranch: [
       {
         name: "Md. Jonny Ahmed",
         designation: "Surveyor/Sub-Overseer",
@@ -237,9 +368,128 @@ const EmployeeList = () => {
         mobile: "01734881283",
         education: "S.S.C",
         joiningDate: "-"
+      },
+      {
+        name: "Md. Ferdous Ur Rahman",
+        designation: "Work Assistant",
+        mobile: "01821525620",
+        education: "H.S.C",
+        joiningDate: "-"
+      },
+      {
+        name: "Md. Istiak Ahammed Asad",
+        designation: "Work Assistant",
+        mobile: "01715280522",
+        education: "B.A",
+        joiningDate: "-"
+      },
+      {
+        name: "Md. Arif Hossen",
+        designation: "Street Light Inspector",
+        mobile: "01729545765",
+        education: "B.A",
+        joiningDate: "-"
+      },
+      {
+        name: "Md. Monser Ali",
+        designation: "Road Roller Driver",
+        mobile: "01712782941",
+        education: "Class 8",
+        joiningDate: "-"
+      },
+      {
+        name: "A. Malek",
+        designation: "Road Roller Driver",
+        mobile: "01843746925",
+        education: "Class 8",
+        joiningDate: "-"
+      },
+      {
+        name: "Md. Anowar Hossen",
+        designation: "Garbage Truck Driver",
+        mobile: "01715912224",
+        education: "Class 8",
+        joiningDate: "-"
+      },
+      {
+        name: "Md. Sohel",
+        designation: "Garbage Truck Driver",
+        mobile: "01727640888",
+        education: "Class 8",
+        joiningDate: "-"
+      },
+      {
+        name: "Masum Hossen",
+        designation: "Truck/Tractor Driver",
+        mobile: "01870462281",
+        education: "Class 8",
+        joiningDate: "-"
+      },
+      {
+        name: "Md. Wasim Mia",
+        designation: "Mixture Machine Operator",
+        mobile: "01727513058",
+        education: "Class 8",
+        joiningDate: "-"
+      },
+      {
+        name: "Pavel Ahammed",
+        designation: "Pump Operator",
+        mobile: "01707622961",
+        education: "S.S.C",
+        joiningDate: "-"
+      },
+      {
+        name: "Md. Mostofa",
+        designation: "Pump Operator",
+        mobile: "01793760227",
+        education: "S.S.C",
+        joiningDate: "-"
+      },
+      {
+        name: "Khorshed Alam",
+        designation: "Lineman",
+        mobile: "01729604062",
+        education: "Class 8",
+        joiningDate: "-"
+      },
+      {
+        name: "Syed Asaduzzaman",
+        designation: "Electrical Helper",
+        mobile: "01712532492",
+        education: "Class 8",
+        joiningDate: "-"
+      },
+      {
+        name: "Md. Kamal Hossen",
+        designation: "Electrical Helper",
+        mobile: "01713504423",
+        education: "Class 8",
+        joiningDate: "-"
+      },
+      {
+        name: "Md. Helal Uddin",
+        designation: "Office Assistant",
+        mobile: "01813591390",
+        education: "Class 8",
+        joiningDate: "-"
+      },
+      {
+        name: "Md. Arif Hossen-2",
+        designation: "Office Assistant",
+        mobile: "01923730631",
+        education: "Class 8",
+        joiningDate: "-"
+      },
+      {
+        name: "Md. Abdus Sobur Molla",
+        designation: "Office Assistant",
+        mobile: "01739895180",
+        education: "Class 8",
+        joiningDate: "-"
       }
     ],
-    healthBranch: [
+    healthFamilyPlanningBranch: [
       {
         name: "Wasim Arafat",
         designation: "Health Assistant",
@@ -258,6 +508,20 @@ const EmployeeList = () => {
         name: "Md. Moktar Hossen",
         designation: "Vaccination Supervisor",
         mobile: "01712232620",
+        education: "H.S.C",
+        joiningDate: "-"
+      },
+      {
+        name: "Hasina Akter",
+        designation: "Vaccinator",
+        mobile: "01720638010",
+        education: "H.S.C",
+        joiningDate: "-"
+      },
+      {
+        name: "Khondokar Sourav Hossen",
+        designation: "Vaccinator",
+        mobile: "01720156262",
         education: "H.S.C",
         joiningDate: "-"
       }
@@ -305,17 +569,21 @@ const EmployeeList = () => {
         title={language === 'en' ? 'Tax Assessment Branch' : 'কর নির্ধারণ শাখা'} 
         data={employeeData.taxAssessmentBranch} 
       />
+      DepartmentTable 
+        title={language === 'en' ? 'Tax collection Branch' : 'কর আদায় শাখা'} 
+        data = {employeeData.taxCollectionBranch} 
+      />
       <DepartmentTable 
         title={language === 'en' ? 'Accounts Branch' : 'হিসাব শাখা'} 
         data={employeeData.accountsBranch} 
       />
       <DepartmentTable 
         title={language === 'en' ? 'Civil/Electrical/Mechanical Branch' : 'সিভিল/ইলেক্ট্রিক্যাল/মেকানিক্যাল শাখা'} 
-        data={employeeData.civilBranch} 
+        data={employeeData.civilElectricalBranch} 
       />
       <DepartmentTable 
         title={language === 'en' ? 'Health and Family Planning Branch' : 'স্বাস্থ্য ও পরিবার পরিকল্পনা শাখা'} 
-        data={employeeData.healthBranch} 
+        data={employeeData.healthFamilyPlanningBranch} 
       />
       <DepartmentTable 
         title={language === 'en' ? 'Cleanliness Branch' : 'পরিচ্ছন্নতা শাখা'} 
