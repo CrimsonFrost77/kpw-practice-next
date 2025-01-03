@@ -69,7 +69,10 @@ const Navbar = () => {
       </nav>
 
       {/* Mobile Menu Wrapper */}
-      <div className="fixed top-[125px] left-0 right-0 overflow-hidden [@media(min-width:925px)]:hidden z-40">
+      <div className={`
+        fixed top-[125px] left-0 right-0 overflow-hidden [@media(min-width:925px)]:hidden
+        ${isMenuOpen ? 'z-40 pointer-events-auto' : '-z-10 pointer-events-none'}
+      `}>
         <div 
           className={`
             bg-[#007554] w-full transform
