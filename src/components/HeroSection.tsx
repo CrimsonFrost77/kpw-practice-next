@@ -48,14 +48,6 @@ const HeroSection = () => {
         className="object-cover"
       />
       
-      {/* Overlay with text 
-      <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-        <div className="text-center text-white p-4">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            {translations['site.title'][language]}
-          </h1>
-        </div>
-      </div>*/}
     </div>
   );
 };

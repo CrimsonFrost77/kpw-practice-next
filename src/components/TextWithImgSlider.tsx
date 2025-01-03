@@ -1,22 +1,21 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-
-
+import { useLanguage } from '@/app/contexts/LanguageContext';
 
 interface TextWithImgSliderProps {
+  titleKey: string;
   images: {
     src: string;
     alt: string;
   }[];
-  title: string;
   content: React.ReactNode;
-
 }
 
-const TextWithImgSlider = ({ images, title, content }: TextWithImgSliderProps) => {
+const TextWithImgSlider = ({ titleKey, images, content }: TextWithImgSliderProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const { language, translations } = useLanguage();
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % images.length);
@@ -26,22 +25,17 @@ const TextWithImgSlider = ({ images, title, content }: TextWithImgSliderProps) =
     setCurrentSlide((prev) => (prev - 1 + images.length) % images.length);
   };
 
-  
-
-
   return (
     <div className="max-w-4xl mx-auto p-5 bg-white rounded-lg shadow-md">
-      <h2 className="text-[#0d3d35] text-2xl font-bold mb-6">{title}</h2>
+      <h2 className="text-[#0d3d35] text-2xl font-bold mb-6">
+        {translations[titleKey][language]}
+      </h2>
       
-      <div className="flex flex-col lg:flex-row gap-6">
-        {/* Text Content */}
-        <div className="lg:flex-1 prose max-w-none">
-          {content}
-        </div>
-
-        {/* Slideshow Container */}
-        <div className="lg:w-96 flex-none relative">
-          <div className="relative w-full h-96 rounded-lg overflow-hidden">
+      {/* Responsive container with float behavior */}
+      <div className="relative">
+        {/* Image Slider - Floated on larger screens */}
+        <div className="float-right ml-6 mb-4 w-full md:w-96">
+          <div className="relative w-full aspect-square rounded-lg overflow-hidden">
             <Image
               src={images[currentSlide].src}
               alt={images[currentSlide].alt}
@@ -81,6 +75,14 @@ const TextWithImgSlider = ({ images, title, content }: TextWithImgSliderProps) =
             ))}
           </div>
         </div>
+
+        {/* Text Content - Wraps around the floated image */}
+        <div className="prose max-w-none text-justify">
+          {content}
+        </div>
+
+        {/* Clear float */}
+        <div className="clear-both" />
       </div>
     </div>
   );
