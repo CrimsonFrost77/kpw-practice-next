@@ -11,20 +11,22 @@ interface ImageThumbnailProps {
 
 const ImageThumbnail = ({ src, alt, onClick }: ImageThumbnailProps) => {
   return (
-    <div 
-      className="relative aspect-square overflow-hidden rounded-lg cursor-pointer group"
+    <button 
       onClick={onClick}
+      className="relative w-full aspect-square overflow-hidden rounded-lg cursor-pointer"
+      aria-label={`Open ${alt} in gallery`}
     >
       <Image
         src={src}
         alt={alt}
         fill
-        className="object-cover transition-transform duration-300 group-hover:scale-110"
+        className="object-cover"
       />
-      <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+      {/* Overlay only shows on desktop hover */}
+      <div className="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300 hidden md:flex items-end">
         <p className="text-white p-4 text-sm">{alt}</p>
       </div>
-    </div>
+    </button>
   );
 };
 
