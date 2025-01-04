@@ -188,7 +188,7 @@ const EmployeeList = () => {
           designation: "Office Assistant",
         mobile: "01734000023",
         education: "Class 8",
-        joinDate: "-",
+        joiningDate: "-",
          
         
       },
@@ -197,7 +197,7 @@ const EmployeeList = () => {
         designation:"Office Assistant",
         mobile: "01712851355",
         education: "Class 8",
-        joinDate:"-",
+        joiningDate:"-",
         
         },
     
@@ -206,7 +206,7 @@ const EmployeeList = () => {
         designation:  "Office Assistant",
         mobile:  "01776634486",
         education: "Class 8",
-        joinDate:  "-",
+        joiningDate:  "-",
         
         },
       
@@ -215,7 +215,7 @@ const EmployeeList = () => {
         designation:  "Office Assistant",
        mobile: "01724088109",
       education: "Class 8",
-        joinDate: "-",
+        joiningDate: "-",
       
         },
     
@@ -224,7 +224,7 @@ const EmployeeList = () => {
        designation: "Night Guard",
         mobile:"01818469351",
         education: "Class 8",
-        joinDate: "-",
+        joiningDate: "-",
         
       },
       {
@@ -232,7 +232,7 @@ const EmployeeList = () => {
         designation: "Night Guard",
          mobile:  "01727267092",
         education: "Class 8",
-        joinDate:  "-",
+        joiningDate:  "-",
         
       },
       {
@@ -240,7 +240,7 @@ const EmployeeList = () => {
         designation: "Office Assistant",
         mobile: "01721523600",
        education: "Class 8",
-        joinDate: "-",
+        joiningDate: "-",
         
       },
       {
@@ -249,7 +249,7 @@ const EmployeeList = () => {
        mobile: "01742856623",
          
         education: "Class 8",
-        joinDate: "-",
+        joiningDate: "-",
         
       }
     
