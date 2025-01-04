@@ -561,15 +561,15 @@ const EmployeeList = () => {
         title={language === 'en' ? 'Executive Officers' : 'কার্যনির্বাহী কর্মকর্তা'} 
         data={employeeData.executiveOfficers} 
       />
-      <DepartmentTable 
+      < DepartmentTable 
         title={language === 'en' ? 'General Branch' : 'সাধারণ শাখা'} 
-        data={employeeData.generalBranch} 
+        data ={employeeData.generalBranch} 
       />
       <DepartmentTable 
         title={language === 'en' ? 'Tax Assessment Branch' : 'কর নির্ধারণ শাখা'} 
         data={employeeData.taxAssessmentBranch} 
       />
-      DepartmentTable 
+      <DepartmentTable 
         title={language === 'en' ? 'Tax collection Branch' : 'কর আদায় শাখা'} 
         data = {employeeData.taxCollectionBranch} 
       />
